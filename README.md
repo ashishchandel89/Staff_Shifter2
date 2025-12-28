@@ -1,3 +1,4 @@
+<img src="Ashish/nature2.png" />
 StaffShifter
 
 StaffShifter is an Android application made to simplify staff handling in schools and institutes.
