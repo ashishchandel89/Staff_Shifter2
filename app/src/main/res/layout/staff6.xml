@@ -1,0 +1,52 @@
+
+                                <LinearLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="14dp"
+                                android:textColor="#414040"
+                                android:id="@+id/t1_name"
+                                android:layout_marginLeft="26dp"
+                                android:layout_marginTop="30dp"
+                                ></TextView>
+
+
+
+                                <RadioGroup
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="30dp"
+                                    android:id="@+id/radiogroup1"
+                                   >
+                                    <RadioButton
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#84858A"
+                                        android:button="@drawable/present"
+
+                                        android:id="@+id/r1_present"
+                                        android:checked="true"
+                                        ></RadioButton>
+
+                                    <RadioButton
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:button="@drawable/abscent"
+                                        android:layout_marginLeft="45dp"
+                                        android:layout_marginRight="48dp"
+                                        android:textColor="#84858A"
+                                        android:id="@+id/r2_absent"
+                                        ></RadioButton>
+                                </RadioGroup>
+                            </LinearLayout>

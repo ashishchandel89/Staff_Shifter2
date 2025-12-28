@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+
+    android:clipToPadding="false"
+    android:clipChildren="false">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/teacher90"></ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="vertical"
+            android:background="@drawable/shape15"
+            android:padding="16dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="5dp"
+                android:onClick="back_button3"
+                android:background="@drawable/shape28"
+                android:src="@drawable/back4"
+                android:elevation="6dp"
+                android:padding="7dp"
+                android:scaleType="fitCenter"
+                ></ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, John Doe"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="@font/font2"
+            android:layout_marginTop="55dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/t1"
+            ></TextView>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+    <!-- Notice-->
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's Notice :"
+        android:textColor="#484851"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="29dp"
+        android:fontFamily="@font/font"
+        android:textStyle="bold"
+        android:textSize="14dp"
+       ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latest staff adjust :"
+            android:textColor="#484851"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="68dp"
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            ></TextView>
+
+</LinearLayout>
+    <!--notice layout-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
+        >
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape6"
+        android:elevation="6dp"
+        >
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "
+                android:textSize="14.3dp"
+                android:fontFamily="@font/font3"
+                android:textColor="#484851"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/date1"
+            ></TextView>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text=""
+               android:textSize="14.3dp"
+               android:fontFamily="@font/font3"
+               android:textColor="#484851"
+               android:layout_marginTop="7dp"
+               android:layout_marginLeft="2dp"
+               android:id="@+id/date2"
+               ></TextView>
+       </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="13dp"
+                android:layout_marginTop="2dp"
+                android:background="#484851"
+                ></View>
+
+
+        <!--Subject-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject: "
+                android:textSize="10.5dp"
+                android:fontFamily="@font/font"
+                android:textStyle="bold"
+                android:textColor="#484851"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/subject"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="10.5dp"
+                android:fontFamily="@font/font"
+                android:textColor="#FF2323"
+                android:layout_marginTop="7dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/t1_subject"
+                ></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:id="@+id/t1_notice"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:fontFamily="@font/font"
+            android:textColor="#484851"
+            android:layout_marginLeft="17dp"
+            ></TextView>
+
+
+        </LinearLayout>
+
+
+        <!--Staff Adjust-->
+
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="2dp"
+            android:orientation="vertical"
+            android:background="@drawable/shape6"
+            android:elevation="6dp"
+            >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent class adjust: "
+                android:textSize="14.3dp"
+                android:fontFamily="@font/font3"
+                android:textColor="#484851"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/birthday1"
+                ></TextView>
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="13dp"
+            android:layout_marginTop="2dp"
+            android:background="#484851"
+            ></View>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. "
+                    android:textSize="10dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#484851"
+                    android:layout_marginTop="7dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="17dp"
+                    android:id="@+id/prof1"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Varsha Bansal"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#FF2323"
+                    android:layout_marginTop="7dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="2dp"
+                    android:id="@+id/prof2"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wishing you joy , health and success.🎂\nMay your day be filled with happiness.🎉"
+                android:textSize="10dp"
+                android:fontFamily="@font/font"
+                android:textColor="#484851"
+                android:layout_marginTop="7dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/wish1"
+                ></TextView>
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <!-- 1st row-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="10dp"
+       android:orientation="vertical"
+        android:background="@drawable/shape6"
+        android:elevation="6dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+<ImageButton
+    android:layout_width="53dp"
+    android:layout_height="53dp"
+    android:src="@drawable/calendar"
+
+    android:layout_marginTop="14dp"
+    android:layout_marginLeft="40dp"
+    android:scaleType="centerInside"
+
+    android:padding="10dp"
+    android:onClick="f1"
+    android:background="@drawable/shape7"
+    ></ImageButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="      Staff's\n  Attendance"
+        android:fontFamily="@font/font2"
+        android:textSize="12dp"
+        android:textColor="#5B5D66"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="1dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:src="@drawable/schedule2"
+
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="54dp"
+                android:scaleType="centerInside"
+
+                android:padding="10dp"
+                android:onClick="f2"
+                android:background="@drawable/shape8"
+                ></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     Manage\n    Schedule"
+                android:fontFamily="@font/font2"
+                android:textColor="#5B5D66"
+                android:textSize="12dp"
+                android:layout_marginLeft="46dp"
+                android:layout_marginTop="1dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageButton
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:src="@drawable/reschedule2"
+
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="54dp"
+                android:scaleType="centerInside"
+
+                android:onClick="f3"
+                android:padding="10dp"
+                android:background="@drawable/shape9"
+                ></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="       Staff\n  Reschedule"
+                android:fontFamily="@font/font2"
+                android:textColor="#5B5D66"
+                android:textSize="12dp"
+                android:layout_marginLeft="46dp"
+                android:layout_marginTop="1dp"></TextView>
+        </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <!-- 2nd line -->
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageButton
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/timetable2"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="40dp"
+                    android:scaleType="centerInside"
+
+                    android:onClick="f4"
+                    android:padding="10dp"
+                    android:background="@drawable/shape10"
+                    ></ImageButton>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="      Staff's\n   TimeTable"
+                    android:fontFamily="@font/font2"
+                    android:textSize="12dp"
+                    android:textColor="#5B5D66"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="1dp"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageButton
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/record2"
+
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="54dp"
+                    android:scaleType="centerInside"
+
+                    android:padding="10dp"
+                    android:onClick="f5"
+                    android:background="@drawable/shape11"
+                    ></ImageButton>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="       Staff\n     Records"
+                    android:fontFamily="@font/font2"
+                    android:textColor="#5B5D66"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="1dp"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageButton
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/manage1"
+
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="54dp"
+                    android:scaleType="centerInside"
+
+                    android:padding="10dp"
+                    android:onClick="f6"
+                    android:background="@drawable/shape12"
+                    ></ImageButton>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     Manage\n      Notice"
+                    android:fontFamily="@font/font2"
+                    android:textColor="#5B5D66"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="1dp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <!--<LinearLayout
+        android:layout_width="143dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="70dp"
+
+        android:background="@drawable/shape16"></LinearLayout>
+        <LinearLayout
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="66dp"
+            android:elevation="15dp"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shape18"
+            > <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/record2"
+            android:padding="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="3dp"
+            ></ImageView></LinearLayout>-->
+
+         <ImageButton
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:src="@drawable/home"
+            android:padding="10dp"
+             android:layout_marginTop="60dp"
+            android:layout_marginLeft="153dp"
+             android:elevation="15dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+             android:background="@drawable/shape18"
+            ></ImageButton>
+
+     <!--   <LinearLayout
+            android:layout_width="143dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/shape19"></LinearLayout>
+       <LinearLayout
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="66dp"
+            android:elevation="15dp"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shape18"
+            > <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/record2"
+            android:padding="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="3dp"
+
+            ></ImageView></LinearLayout>-->
+
+    </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

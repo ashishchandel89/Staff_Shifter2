@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+
+
+    <!-- Manage Schedule -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape5">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:elevation="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape21"
+                android:padding="16dp">
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="back_button5"
+                    android:background="@drawable/shape28"
+                    android:src="@drawable/back4"
+                    android:elevation="6dp"
+                    android:padding="7dp"
+                    android:scaleType="fitCenter"
+                    ></ImageButton>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage Schedule"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font2"
+                    android:layout_marginTop="33dp"
+
+                    android:textSize="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:id="@+id/t1_manage"
+                    ></TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="105dp"
+                android:layout_marginRight="10dp"
+                android:elevation="15dp"
+                android:background="@drawable/shape20"
+                android:id="@+id/l1"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+
+
+                <!--Name-->
+
+
+
+                <TextView
+                    android:id="@+id/t1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="50dp"
+                    android:elevation="6dp"
+                    android:fontFamily="@font/font"
+                    android:text="Select Name"
+                    android:textColor="#5A5B5D"
+                    android:textSize="16dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                    <Spinner
+                        android:layout_width="245.7dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginHorizontal="35dp"
+                        android:fontFamily="@font/font"
+                        android:padding="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/shape13"
+                        android:textColor="#646466"
+                        android:textSize="14dp"
+                        android:id="@+id/name_spin"></Spinner>
+
+
+            </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    android:layout_marginHorizontal="35dp"></View>
+
+
+                <!--Day-->
+
+
+                <TextView
+                    android:id="@+id/t2_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:elevation="6dp"
+                    android:fontFamily="@font/font"
+                    android:text="Select Day"
+                    android:textColor="#5A5B5D"
+                    android:textSize="16dp"></TextView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <Spinner
+                        android:layout_width="245.7dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginHorizontal="35dp"
+                        android:fontFamily="@font/font"
+                        android:padding="2dp"
+                        android:layout_marginTop="10dp"
+
+                        android:textColor="#646466"
+                        android:textSize="14dp"
+                        android:id="@+id/day_spin"></Spinner>
+
+
+                </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="0dp"
+            android:background="#C9CACF"
+            android:layout_marginHorizontal="35dp"></View>
+
+
+                <!--Lecture-->
+
+
+                <TextView
+                    android:id="@+id/t2_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:elevation="6dp"
+                    android:fontFamily="@font/font"
+                    android:text="Set Lectures and subjects"
+                    android:textColor="#5A5B5D"
+                    android:textSize="16dp"></TextView>
+
+
+                <!--9:00-10:00-->
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09:00 - 10:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_09"
+                    ></CheckBox>
+
+
+
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/t1_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_09"></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_09"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                           ></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!--10:00-11:00-->
+
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00 - 11:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_10"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_10"></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_10"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+
+                <!--11:00-12:00-->
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11:00 - 12:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_11"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_11"></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_11"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+
+                <!--1:00-2:00-->
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01:00 - 02:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_01"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_01"></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_01"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+
+
+
+                <!--2:00-3:00-->
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02:00 - 03:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_02"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_02"></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_02"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+
+
+                <!--3:00-4:00-->
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03:00 - 04:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_03"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_03"></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_03"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+
+
+                <!--4:00-5:00-->
+
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04:00 - 05:00"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font"
+                    android:textColor="#5A5B5D"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/c1_04"
+                    ></CheckBox>
+
+
+                <!-- Class -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/t1_04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Class       :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/shape13"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            android:id="@+id/class_spin_04"></Spinner>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+
+                <!-- Subject -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/t2_04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="6dp"
+                        android:fontFamily="@font/font"
+                        android:text="Subject  :"
+                        android:textColor="#5A5B5D"
+                        android:textSize="13.5dp"></TextView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:layout_width="170dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/font"
+                            android:padding="2dp"
+                            android:layout_marginTop="0dp"
+                            android:id="@+id/subject_spin_04"
+                            android:textColor="#646466"
+                            android:textSize="14dp"
+                            ></Spinner>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="170dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="138dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#C9CACF"
+                    ></View>
+
+                <!--Button-->
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:text="Save"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/font2"
+                    android:id="@+id/b1_save"
+                    android:textColor="#FFFFFF"
+                    android:onClick="f1"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/shape22"></Button>
+
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>
