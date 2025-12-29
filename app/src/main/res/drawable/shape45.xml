@@ -5,10 +5,5 @@
     <corners
 
         android:topRightRadius="280dp"
-        android:topLeftRadius="280dp"
-
-
-
-
-        />
+        android:topLeftRadius="280dp"/>
 </shape>
