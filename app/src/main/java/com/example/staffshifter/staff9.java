@@ -55,7 +55,7 @@
         ArrayList list_time;
         adapter3 ad3;
 
-        String name1,name2,time1,free1,phone1,time2;
+        String name1,name2,time1,free1,phone1,time2,selectedClass,selectedSubject;
         ArrayList<model3> l1 = new ArrayList<>();
         String url1="https://aptechfatehabad.com/ashish_absent.php";
         String url2="https://aptechfatehabad.com/ashish_timetable2.php";
@@ -209,13 +209,20 @@
                                 for (int i = 0; i < array.length(); i++) {
                                     JSONObject js_obj = array.getJSONObject(i);
 
+                                    selectedClass = js_obj.getString("fclass");
+                                    selectedSubject = js_obj.getString("subject");
+
+
                                     model3 m = new model3();
                                     m.setClass1(js_obj.getString("fclass"));
                                     m.setTime1(js_obj.getString("time"));
                                     m.setSubject1(js_obj.getString("subject"));
+
+
                                     list_time.add(js_obj.getString("time"));
                                     l1.add(m);
                                 }
+
 
                                 adptr_time.notifyDataSetChanged();
 
@@ -421,35 +428,46 @@
         //----------------------Save Button------------------
 
 
-        public void save (View v){
-            StringRequest sr_obj2=new StringRequest(Request.Method.POST, url4, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    Toast.makeText(staff9.this, "Staff Rescheduled Successfully", Toast.LENGTH_SHORT).show();
-                }
-            },
+        public void save(View v){
+
+            StringRequest sr_obj2 = new StringRequest(Request.Method.POST, url4, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Toast.makeText(staff9.this, "Staff Rescheduled Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(staff9.this, "Doesn't Rescheduled", Toast.LENGTH_SHORT).show();
                         }
                     }) {
+
                 @Nullable
                 @Override
                 protected Map<String, String> getParams() {
-                    HashMap<String, String> param_obj = new HashMap<String, String>();
+
+                    HashMap<String, String> param_obj = new HashMap<>();
+
                     param_obj.put("rdate", date1);
                     param_obj.put("rday", day1);
                     param_obj.put("abname", name2);
                     param_obj.put("rtime", time1);
                     param_obj.put("freename", free1);
+
+
+                    param_obj.put("class1", selectedClass);
+                    param_obj.put("subject1", selectedSubject);
+
                     return param_obj;
                 }
             };
-                RequestQueue rq_obj=Volley.newRequestQueue(this);
-                rq_obj.add(sr_obj2);
 
+            RequestQueue rq_obj = Volley.newRequestQueue(this);
+            rq_obj.add(sr_obj2);
         }
+
+
 
 
 

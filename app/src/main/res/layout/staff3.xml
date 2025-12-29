@@ -507,40 +507,66 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Absent staff details-->
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape45"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <TextView
+            android:id="@+id/t1_attendance"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="73dp"
+            android:fontFamily="@font/font2"
+            android:padding="8dp"
+            android:text="Recent Staff Adjustment"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/shape41"
+        android:elevation="6dp"
+        android:layout_marginHorizontal="10dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycle4">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+
+        <!--    home   -->
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-    <!--<LinearLayout
-        android:layout_width="143dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="70dp"
-
-        android:background="@drawable/shape16"></LinearLayout>
-        <LinearLayout
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="66dp"
-            android:elevation="15dp"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:background="@drawable/shape18"
-            > <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/record2"
-            android:padding="10dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginBottom="3dp"
-            ></ImageView></LinearLayout>-->
-
          <ImageButton
             android:layout_width="54dp"
             android:layout_height="54dp"
@@ -553,33 +579,13 @@
             android:scaleType="fitCenter"
              android:background="@drawable/shape18"
             ></ImageButton>
-
-     <!--   <LinearLayout
-            android:layout_width="143dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/shape19"></LinearLayout>
-       <LinearLayout
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="245dp"
-            android:layout_marginTop="66dp"
-            android:elevation="15dp"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:background="@drawable/shape18"
-            > <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/record2"
-            android:padding="10dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginBottom="3dp"
-
-            ></ImageView></LinearLayout>-->
-
     </FrameLayout>
-    </LinearLayout>
+
+
+
+
+
+
+
 </LinearLayout>
 </ScrollView>
