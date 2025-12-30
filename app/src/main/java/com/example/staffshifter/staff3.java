@@ -42,12 +42,16 @@ public class staff3 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.staff3);
         date2 = findViewById(R.id.date2);
-        t1_notice = findViewById(R.id.t1_notice);
+       // t1_notice = findViewById(R.id.t1_notice);
         t1_subject = findViewById(R.id.t1_subject);
         message=findViewById(R.id.message);
 
-        recycle4=findViewById(R.id.recycle4);
-        recycle4.setLayoutManager(new LinearLayoutManager(this));
+        recycle4 = findViewById(R.id.recycle4);
+
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+
+        recycle4.setLayoutManager(layoutManager);
 
 
         StringRequest sr_obj = new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {

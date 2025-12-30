@@ -339,90 +339,93 @@
         public void free_staff(View v) {
 
 
-            adptr_free=new ArrayAdapter<>(this,R.layout.text1,list_free);
-            free_spin.setAdapter(adptr_free);
 
-            free_spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    free1 = free_spin.getItemAtPosition(position).toString();
+                adptr_free = new ArrayAdapter<>(this, R.layout.text1, list_free);
+                free_spin.setAdapter(adptr_free);
 
-                    StringRequest sr_obj = new StringRequest(Request.Method.POST, url5, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONArray array = new JSONArray(response);
-                                for (int i = 0; i < array.length(); i++) {
-                                    JSONObject js_obj = array.getJSONObject(i);
-                                    phone1 = js_obj.getString("phone");
-                                    Log.e("phone1",phone1);
+                free_spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        free1 = free_spin.getItemAtPosition(position).toString();
+
+                        StringRequest sr_obj = new StringRequest(Request.Method.POST, url5, new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONArray array = new JSONArray(response);
+                                    for (int i = 0; i < array.length(); i++) {
+                                        JSONObject js_obj = array.getJSONObject(i);
+                                        phone1 = js_obj.getString("phone");
+                                        Log.e("phone1", phone1);
+                                    }
+                                } catch (Exception e) {
+                                    Toast.makeText(staff9.this, "Error: " + e.toString(), Toast.LENGTH_SHORT).show();
                                 }
-                            } catch (Exception e) {
-                                Toast.makeText(staff9.this, "Error: " + e.toString(), Toast.LENGTH_SHORT).show();
                             }
-                        }
-                    },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(staff9.this, "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
-                                }
-                            }) {
-                        @Nullable
-                        @Override
-                        protected Map<String, String> getParams() {
-                            HashMap<String, String> param_obj = new HashMap<String, String>();
-                            param_obj.put("uname", free1);
-                            return param_obj;
-                        }
-                    };
+                        },
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Toast.makeText(staff9.this, "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }) {
+                            @Nullable
+                            @Override
+                            protected Map<String, String> getParams() {
+                                HashMap<String, String> param_obj = new HashMap<String, String>();
+                                param_obj.put("uname", free1);
+                                return param_obj;
+                            }
+                        };
 
-                    RequestQueue rq_obj=Volley.newRequestQueue(staff9.this);
-                    rq_obj.add(sr_obj);
-                }
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-
-
-            StringRequest sr_obj = new StringRequest(Request.Method.POST, url3, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONArray array = new JSONArray(response);
-                        list_free.clear();
-                        for (int i = 0; i < array.length(); i++) {
-                            JSONObject js_obj = array.getJSONObject(i);
-                            list_free.add(js_obj.getString("fname"));
-                        }
-                        adptr_free.notifyDataSetChanged();
-
-                    } catch (Exception e) {
-                        Toast.makeText(staff9.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        RequestQueue rq_obj = Volley.newRequestQueue(staff9.this);
+                        rq_obj.add(sr_obj);
                     }
-                }
-            },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(staff9.this, "Error" + error.toString(), Toast.LENGTH_SHORT).show();
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+
+                StringRequest sr_obj = new StringRequest(Request.Method.POST, url3, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            list_free.clear();
+                            for (int i = 0; i < array.length(); i++) {
+                                JSONObject js_obj = array.getJSONObject(i);
+                                list_free.add(js_obj.getString("fname"));
+                            }
+                            adptr_free.notifyDataSetChanged();
+
+                        } catch (Exception e) {
+                            Toast.makeText(staff9.this, "Error1" + e.toString(), Toast.LENGTH_SHORT).show();
                         }
-                    }) {
-                @Nullable
-                @Override
-                protected Map<String, String> getParams() {
-                    HashMap<String, String> param_obj = new HashMap<String, String>();
-                    param_obj.put("day", day1);
-                    param_obj.put("adate", date1);
-                    param_obj.put("time", time1);
-                    return param_obj;
-                }
-            };
-                RequestQueue rq_obj=Volley.newRequestQueue(this);
+                    }
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(staff9.this, "Error occur: Please select absent faculty", Toast.LENGTH_SHORT).show();
+                            }
+                        }) {
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() {
+                        HashMap<String, String> param_obj = new HashMap<String, String>();
+                        param_obj.put("day", day1);
+                        param_obj.put("adate", date1);
+                        param_obj.put("time", time1);
+                        return param_obj;
+                    }
+                };
+                RequestQueue rq_obj = Volley.newRequestQueue(this);
                 rq_obj.add(sr_obj);
-        }
+            }
+
 
 
         //----------------------Save Button------------------
@@ -475,13 +478,17 @@
         //-------------------Whatsapp--------------
 
 
-        public void whatsapp(View v){
+        public void whatsapp(View v) {
 
-            time2=time_spin.getSelectedItem().toString();
-        String message="Dear " +free1+" ;\nThis is to infrom you that your free lecture has been rescheduled and will now be adjusted with " +name2 +" sir's class.\nTime:- "+time2+ "\nKindly take the class accordingly.\nThank you for your cooperation.\nBest regards,\nAshish Chandel\nReceptionist";
-            Intent obj=new Intent(Intent.ACTION_VIEW);
-            obj.setData(Uri.parse("http://wa.me/"+phone1+"?text="+Uri.encode(message)));
-            startActivity(obj);
+            if (phone1 != null) {
+                time2 = time_spin.getSelectedItem().toString();
+                String message = "Dear " + free1 + " ;\nThis is to infrom you that your free lecture has been rescheduled and will now be adjusted with " + name2 + "sir/mam's class.\nTime:- " + time2 + "\nKindly take the class accordingly.\nThank you for your cooperation.\nBest regards,\nAshish Chandel\nReceptionist";
+                Intent obj = new Intent(Intent.ACTION_VIEW);
+                obj.setData(Uri.parse("http://wa.me/" + phone1 + "?text=" + Uri.encode(message)));
+                startActivity(obj);
+            }else{
+                Toast.makeText(this, "Please select free faculty", Toast.LENGTH_SHORT).show();
+            }
         }
 
 
@@ -498,7 +505,7 @@
 
             String message = "Dear " + free1 + ";\n"
                     + "This is to inform you that your free lecture has been rescheduled "
-                    + "and will now be adjusted with " + name2 + " sir's class.\n"
+                    + "and will now be adjusted with " + name2 + " sir/mam's class.\n"
                     + "Time:- " + time2 + "\n"
                     + "Kindly take the class accordingly.\n"
                     + "Thank you for your cooperation.\n"
@@ -530,7 +537,11 @@
                 return;
 
             } else {
+                if(phone1!=null)
                 sendSMSNow();
+                else{
+                    Toast.makeText(this, "Please select free faculty", Toast.LENGTH_SHORT).show();
+                }
             }
         }
 
@@ -541,18 +552,22 @@
 
 
 
-        public void call(View v){
-            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
-                    != PackageManager.PERMISSION_GRANTED) {
+        public void call(View v) {
+            if (phone1 != null) {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                        != PackageManager.PERMISSION_GRANTED) {
 
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.CALL_PHONE}, 2);
-                return;
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.CALL_PHONE}, 2);
+                    return;
+                }
+
+                Intent obj = new Intent(Intent.ACTION_CALL);
+                obj.setData(Uri.parse("tel:" + phone1));
+                startActivity(obj);
             }
-
-            Intent obj=new Intent(Intent.ACTION_CALL);
-            obj.setData(Uri.parse("tel:"+phone1));
-            startActivity(obj);
+            else{
+                Toast.makeText(this, "Please select free faculty", Toast.LENGTH_SHORT).show();
+            }
         }
-
     }

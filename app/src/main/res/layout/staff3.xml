@@ -71,40 +71,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today's Notice :"
+        android:text="Today's staff adjustment :"
         android:textColor="#484851"
         android:layout_marginTop="70dp"
-        android:layout_marginLeft="29dp"
+        android:layout_marginLeft="10dp"
         android:fontFamily="@font/font"
         android:textStyle="bold"
         android:textSize="14dp"
        ></TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Latest staff adjust :"
-            android:textColor="#484851"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="68dp"
-            android:fontFamily="@font/font"
-            android:textStyle="bold"
-            android:textSize="14dp"
 
-            ></TextView>
 
 </LinearLayout>
+
     <!--notice layout-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="15dp"
+
         >
 
     <LinearLayout
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_marginTop="8dp"
         android:layout_marginHorizontal="10dp"
@@ -120,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
-                android:textSize="14.3dp"
+                android:textSize="16dp"
                 android:fontFamily="@font/font3"
                 android:textColor="#484851"
                 android:layout_marginTop="7dp"
@@ -131,7 +121,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text=""
-               android:textSize="14.3dp"
+               android:textSize="16dp"
                android:fontFamily="@font/font3"
                android:textColor="#484851"
                android:layout_marginTop="7dp"
@@ -144,12 +134,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="13dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:background="#484851"
                 ></View>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:id="@+id/recycle4">
+        </androidx.recyclerview.widget.RecyclerView>
 
-        <!--Subject-->
+
+        <!--Subject
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -159,11 +156,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Subject: "
-                android:textSize="10.5dp"
+                android:textSize="13dp"
                 android:fontFamily="@font/font"
                 android:textStyle="bold"
                 android:textColor="#484851"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="17dp"
                 android:id="@+id/subject"
                 ></TextView>
@@ -171,10 +168,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="10.5dp"
+                android:textSize="13dp"
                 android:fontFamily="@font/font"
                 android:textColor="#FF2323"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="2dp"
                 android:id="@+id/t1_subject"
@@ -184,14 +181,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="6dp"
             android:id="@+id/t1_notice"
             android:textStyle="bold"
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:fontFamily="@font/font"
             android:textColor="#484851"
             android:layout_marginLeft="17dp"
-            ></TextView>
+            ></TextView>-->
 
 
         </LinearLayout>
@@ -200,93 +197,7 @@
         <!--Staff Adjust-->
 
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="2dp"
-            android:orientation="vertical"
-            android:background="@drawable/shape6"
-            android:elevation="6dp"
-            >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recent class adjust: "
-                android:textSize="14.3dp"
-                android:fontFamily="@font/font3"
-                android:textColor="#484851"
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="17dp"
-                android:id="@+id/birthday1"
-                ></TextView>
-
-
-
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginHorizontal="13dp"
-            android:layout_marginTop="2dp"
-            android:background="#484851"
-            ></View>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Prof. "
-                    android:textSize="10dp"
-                    android:fontFamily="@font/font"
-                    android:textColor="#484851"
-                    android:layout_marginTop="7dp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="17dp"
-                    android:id="@+id/prof1"
-                    ></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" Varsha Bansal"
-                    android:textSize="10dp"
-                    android:fontFamily="@font/font"
-                    android:textColor="#FF2323"
-                    android:layout_marginTop="7dp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="2dp"
-                    android:id="@+id/prof2"
-                    ></TextView>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wishing you joy , health and success.🎂\nMay your day be filled with happiness.🎉"
-                android:textSize="10dp"
-                android:fontFamily="@font/font"
-                android:textColor="#484851"
-                android:layout_marginTop="7dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="17dp"
-                android:id="@+id/wish1"
-                ></TextView>
-
-
-    </LinearLayout>
     </LinearLayout>
 
 
@@ -520,7 +431,7 @@
 
 
 
-    <!--Absent staff details-->
+    <!--Absent staff details
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -551,15 +462,11 @@
         android:layout_marginHorizontal="10dp">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/recycle4">
-        </androidx.recyclerview.widget.RecyclerView>
+
 
 
     </LinearLayout>
-
+-->
 
 
         <!--    home   -->
