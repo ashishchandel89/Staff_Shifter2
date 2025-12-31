@@ -2,12 +2,17 @@
 
     import android.Manifest;
     import android.app.Activity;
+    import android.app.AlarmManager;
     import android.app.DatePickerDialog;
     import android.app.Dialog;
+    import android.app.PendingIntent;
+    import android.content.Context;
     import android.content.Intent;
     import android.content.pm.PackageManager;
     import android.net.Uri;
+    import android.os.Build;
     import android.os.Bundle;
+    import android.provider.Settings;
     import android.telephony.SmsManager;
     import android.util.Log;
     import android.view.View;
@@ -274,56 +279,47 @@
                 return null;
         }
 
-        DatePickerDialog.OnDateSetListener obj2 = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String selectedDate = year + "-" + (month + 1) + "-" + dayOfMonth;
-                et1_date.setText(selectedDate);
+        DatePickerDialog.OnDateSetListener obj2 =
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int y, int m, int d) {
 
-                date1 = selectedDate; // ✅ correct
+                        year = y;          // ✅ FIX
+                        month = m;         // ✅ FIX
+                        day = d;           // ✅ FIX
 
-                Calendar cal_obj2 = Calendar.getInstance();
-                cal_obj2.set(year, month, dayOfMonth);
+                        date1 = y + "-" + (m + 1) + "-" + d;
+                        et1_date.setText(date1);
 
-                int dayOfWeek = cal_obj2.get(Calendar.DAY_OF_WEEK);
-                String dayName = "";
+                        Calendar cal = Calendar.getInstance();
+                        cal.set(y, m, d);
 
-                switch (dayOfWeek) {
-                    case Calendar.SUNDAY:
-                        dayName = "Sunday";
-                        break;
-                    case Calendar.MONDAY:
-                        dayName = "Monday";
-                        break;
-                    case Calendar.TUESDAY:
-                        dayName = "Tuesday";
-                        break;
-                    case Calendar.WEDNESDAY:
-                        dayName = "Wednesday";
-                        break;
-                    case Calendar.THURSDAY:
-                        dayName = "Thursday";
-                        break;
-                    case Calendar.FRIDAY:
-                        dayName = "Friday";
-                        break;
-                    case Calendar.SATURDAY:
-                        dayName = "Saturday";
-                        break;
-                }
-                et1_day.setText(dayName);
-                day1=et1_day.getText().toString();
-                FetchAbsentFaculty();
+                        int dow = cal.get(Calendar.DAY_OF_WEEK);
+                        String dayName = "";
 
-            }
+                        switch (dow) {
+                            case Calendar.MONDAY: dayName = "Monday"; break;
+                            case Calendar.TUESDAY: dayName = "Tuesday"; break;
+                            case Calendar.WEDNESDAY: dayName = "Wednesday"; break;
+                            case Calendar.THURSDAY: dayName = "Thursday"; break;
+                            case Calendar.FRIDAY: dayName = "Friday"; break;
+                            case Calendar.SATURDAY: dayName = "Saturday"; break;
+                            case Calendar.SUNDAY: dayName = "Sunday"; break;
+                        }
+
+                        day1 = dayName;
+                        et1_day.setText(day1);
+
+                        FetchAbsentFaculty();
+                    }
+                };
 
 
 
 
-        };
 
 
-    //---------------------------back button-----------------
+        //---------------------------back button-----------------
         public void back_button5(View v) {
             overridePendingTransition(R.anim.slide, R.anim.slide2);
             finish();
@@ -468,8 +464,79 @@
 
             RequestQueue rq_obj = Volley.newRequestQueue(this);
             rq_obj.add(sr_obj2);
+
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+                if (!am.canScheduleExactAlarms()) {
+                    Intent intent =
+                            new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+                    startActivity(intent);
+                    return;
+                }
+            }
+
+
+            //  🔔 Reminder Call
+            setReminder();
         }
 
+
+
+
+
+        //------------------setReminder-------------
+
+
+        private void setReminder() {
+
+            try {
+                // time1 = "03:40-04:40"
+                String startTime = time1.split("-")[0];
+                String[] hm = startTime.split(":");
+
+                int hour = Integer.parseInt(hm[0]);
+                int min  = Integer.parseInt(hm[1]);
+
+                Calendar cal = Calendar.getInstance();
+
+                cal.set(Calendar.YEAR, year);
+                cal.set(Calendar.MONTH, month); // DatePicker wala month
+                cal.set(Calendar.DAY_OF_MONTH, day);
+
+                cal.set(Calendar.HOUR_OF_DAY, hour);
+                cal.set(Calendar.MINUTE, min);
+                cal.set(Calendar.SECOND, 0);
+
+                // 🔥 SAFE minus 15
+                cal.add(Calendar.MINUTE, -15);
+
+                if (cal.getTimeInMillis() <= System.currentTimeMillis()) {
+                    Toast.makeText(this, "Lecture time already passed", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Intent intent = new Intent(this, ReminderReceiver.class);
+                intent.putExtra("phone", phone1);
+                intent.putExtra("message",
+                        "Reminder: " + free1 +
+                                " has adjusted lecture with " + name2 +
+                                " at " + time1);
+
+                PendingIntent pi = PendingIntent.getBroadcast(
+                        this, 101, intent,
+                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+                am.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pi);
+
+                Toast.makeText(this, "🔔 Reminder set for 15 min before", Toast.LENGTH_SHORT).show();
+
+            } catch (Exception e) {
+                Toast.makeText(this, "Reminder error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }
 
 
 
