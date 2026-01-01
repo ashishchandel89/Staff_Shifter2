@@ -23,7 +23,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,29 +45,34 @@ public class staff3 extends Activity {
         setContentView(R.layout.staff3);
         date2 = findViewById(R.id.date2);
        // t1_notice = findViewById(R.id.t1_notice);
+
         t1_subject = findViewById(R.id.t1_subject);
         message=findViewById(R.id.message);
 
         recycle4 = findViewById(R.id.recycle4);
-
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
         recycle4.setLayoutManager(layoutManager);
 
+        Calendar cal_obj=Calendar.getInstance();
+        SimpleDateFormat date_obj=new SimpleDateFormat("yyyy-MM-dd");
+        String cur_date=date_obj.format(cal_obj.getTime());
+        date2.setText(cur_date);
 
-        StringRequest sr_obj = new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {
+
+     /*   StringRequest sr_obj = new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONArray array = new JSONArray(response);
                     if (array.length() > 0) {
                         JSONObject js_obj = array.getJSONObject(0);
-                        t2_date = js_obj.getString("ndate");
+
                         t2_notice = js_obj.getString("notice");
                         t2_subject = js_obj.getString("subject");
 
-                        date2.setText(t2_date);
+
                         t1_notice.setText(t2_notice);
                         t1_subject.setText(t2_subject);
                     } else {
@@ -90,7 +97,7 @@ public class staff3 extends Activity {
             }
         };
         RequestQueue rq_obj = Volley.newRequestQueue(this);
-        rq_obj.add(sr_obj);
+        rq_obj.add(sr_obj);*/
 
 
 
