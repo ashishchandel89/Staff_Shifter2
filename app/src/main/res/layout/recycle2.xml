@@ -10,7 +10,7 @@
 
 
 
-    <!-- Manage Notice -->
+    <!-- Staff timetable -->
 
     <LinearLayout
         android:layout_width="match_parent"

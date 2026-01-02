@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class staff3 extends Activity {
-    TextView date2,t1_notice,t1_subject,message;
+    TextView date2,t1_notice,t1_subject,message,t1_name;
     String t2_date,t2_notice,t2_subject;
     adapter4 ad4;
     String free_staff,absent_staff,time1,subject1,class1;
@@ -45,11 +45,21 @@ public class staff3 extends Activity {
         setContentView(R.layout.staff3);
         date2 = findViewById(R.id.date2);
        // t1_notice = findViewById(R.id.t1_notice);
-
+        t1_name=findViewById(R.id.t1_name);
         t1_subject = findViewById(R.id.t1_subject);
         message=findViewById(R.id.message);
-
         recycle4 = findViewById(R.id.recycle4);
+
+       Intent obj=getIntent();
+       String s1=obj.getStringExtra("text");
+
+       if(s1!=null){
+            t1_name.setText(s1);
+       }
+       else{
+           t1_name.setText("Guest");
+       }
+
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 

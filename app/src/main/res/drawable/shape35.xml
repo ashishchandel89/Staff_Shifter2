@@ -4,8 +4,10 @@
     <solid android:color="#FFFFFF"/>
 
     <corners android:radius="20dp"/>
+
     <gradient
-        android:startColor="#FFFFFF"
+        android:startColor="#E4DEDF"
         android:endColor="#E4DEDE"
         android:angle="90"/>
+
 </shape>

@@ -1,6 +1,7 @@
 package com.example.staffshifter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -154,12 +155,15 @@ public class staff6 extends Activity {
             RequestQueue rq_obj=Volley.newRequestQueue(this);
             rq_obj.add(sr_obj2);
 
+            back();
+
         }catch(Exception e4){
             Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
         }
 
-
     }
-
-
+    public void back(){
+        overridePendingTransition(R.anim.slide,R.anim.slide2);
+        finish();
+    }
 }

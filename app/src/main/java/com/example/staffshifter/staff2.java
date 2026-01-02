@@ -48,16 +48,18 @@ public class staff2 extends Activity {
 
 
     public void f1(View v){
-        username1=et1_username.getText().toString().trim();
-        password1=et1_password.getText().toString().trim();
-        if(username1.equals("Ashish") && password1.equals("123")){
-            Toast.makeText(this, "Login Sucessfuly", Toast.LENGTH_SHORT).show();
+        //username1=et1_username.getText().toString().trim();
+      //  password1=et1_password.getText().toString().trim();
+       // if(username1.equals("Ashish") && password1.equals("123")){
+
             Intent obj = new Intent(staff2.this, staff3.class);
+           // obj.putExtra("text",username1);
+            Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show();
             startActivity(obj);
 
         }
-        else{
-            Toast.makeText(staff2.this, "Invalid User!", Toast.LENGTH_SHORT).show();
+        //else{
+       //     Toast.makeText(staff2.this, "Invalid User!", Toast.LENGTH_SHORT).show();
         }
 
         /*StringRequest sr_obj=new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {
@@ -85,5 +87,4 @@ public class staff2 extends Activity {
             rq_obj.add(sr_obj);
 
 */
-    }
-}
+

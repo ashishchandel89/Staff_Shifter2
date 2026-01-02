@@ -5,16 +5,21 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,35 +29,166 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class staff7 extends Activity {
-    TextView et1_date;
+
+    Spinner name_spin;
+    ArrayList list_name;
+    String name1,f_name1,pass1,email1,phone1,dob1,gender1;
+    ArrayAdapter adptr_name;
+    String url1 = "https://aptechfatehabad.com/ashish_facultynames.php";
+    String url2 = "https://aptechfatehabad.com/ashish_detail.php";
+    String name2;
+
+    /*TextView et1_date;
     EditText et1_notice,et1_subject;
     int year,month,day;
     String ndate1,notice1,nsubject1;
-    String url1="https://aptechfatehabad.com/ashish_notice.php";
+   String url1="https://aptechfatehabad.com/ashish_notice.php";*/
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.staff7); // ✅ fixed
-        et1_date = findViewById(R.id.et1_date);
-        et1_notice=findViewById(R.id.et1_notice);
-        et1_subject=findViewById(R.id.et1_subject);
+        setContentView(R.layout.staff7);
+        name_spin = findViewById(R.id.name_spin);
+        list_name = new ArrayList<>();
 
-        Calendar cal_obj = Calendar.getInstance();
-        year = cal_obj.get(Calendar.YEAR);
-        month = cal_obj.get(Calendar.MONTH);
-        day = cal_obj.get(Calendar.DAY_OF_MONTH);
+        // Spinner adapter
+        adptr_name = new ArrayAdapter<>(this, R.layout.text1, list_name);
+        name_spin.setAdapter(adptr_name);
+
+        // Fetch faculty names for spinner
+        fetchFacultyNames();
+
+        // Spinner item listener
+        name_spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                name2 = name_spin.getSelectedItem().toString();
+                name2 = name_spin.getSelectedItem().toString();
+
+                StringRequest sr_obj = new StringRequest(Request.Method.POST, url2,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+
+                                    Log.d("RESPONSE_DATA", response);
+
+                                    // Check if response is valid JSON
+                                    if (response.trim().startsWith("<")) {
+                                        Toast.makeText(staff7.this, "Invalid response from server", Toast.LENGTH_LONG).show();
+                                        return;
+                                    }
+
+                                    JSONArray array = new JSONArray(response);
+
+                                    for (int i = 0; i < array.length(); i++) {
+                                        JSONObject js_obj = array.getJSONObject(i);
+                                        name1=js_obj.getString("uname");
+                                        f_name1=js_obj.getString("fname");
+                                        pass1=js_obj.getString("pass");
+                                        email1=js_obj.getString("email");
+                                        phone1= js_obj.getString("phone");
+                                        dob1=js_obj.getString("dob");
+                                        gender1=js_obj.getString("gender");
+
+
+                                    }
+
+
+
+                                } catch (Exception e) {
+                                    Toast.makeText(staff7.this, "JSON Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(staff7.this, "Volley Error: " + error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }) {
+
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() {
+                        HashMap<String, String> param_obj = new HashMap<>();
+                        return param_obj;
+                    }
+                };
+                RequestQueue rq_obj=Volley.newRequestQueue(staff7.this);
+                rq_obj.add(sr_obj);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
+    public void back_button5(View view) {
+        overridePendingTransition(R.anim.slide, R.anim.slide2);
+        finish();
+    }
+
+
+
+
+    public void fetchFacultyNames(){
+        StringRequest sr_obj = new StringRequest(Request.Method.POST, url1,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            list_name.clear();
+                            for (int i = 0; i < array.length(); i++) {
+                                JSONObject js_obj = array.getJSONObject(i);
+                                list_name.add(js_obj.getString("uname"));
+                            }
+                            adptr_name.notifyDataSetChanged();
+                        } catch (Exception e) {
+                            Toast.makeText(staff7.this, "JSON Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(staff7.this, "Error fetching names", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        RequestQueue rq_obj = Volley.newRequestQueue(this);
+        rq_obj.add(sr_obj);
+    }
+
 
 
     }
 
-    public void f1_date(View v){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*public void f1_date(View v){
         showDialog(0);
     }
 
@@ -118,5 +254,4 @@ public class staff7 extends Activity {
     public void back_button5(View view) {
         overridePendingTransition(R.anim.slide, R.anim.slide2);
         finish();
-    }
-}
+    }*/
