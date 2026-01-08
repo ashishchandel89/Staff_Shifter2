@@ -26,41 +26,38 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class staff2 extends Activity {
-    EditText et1_username,et1_password;
+    EditText et1_username, et1_password;
 
-    String username1,password1;
-   // String url1="https://aptechfatehabad.com/ashish_authentication.php";
+    String username1, password1;
+    // String url1="https://aptechfatehabad.com/ashish_authentication.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.staff2);
 
-        et1_username=findViewById(R.id.et1_username);
-        et1_password=findViewById(R.id.et1_password);
-
-
+        et1_username = findViewById(R.id.et1_username);
+        et1_password = findViewById(R.id.et1_password);
 
 
     }
 
 
-
-
-    public void f1(View v){
-        //username1=et1_username.getText().toString().trim();
-      //  password1=et1_password.getText().toString().trim();
-       // if(username1.equals("Ashish") && password1.equals("123")){
+    public void f1(View v) {
+        username1 = et1_username.getText().toString().trim();
+        password1 = et1_password.getText().toString().trim();
+        if (username1.equals("Ashish") && password1.equals("123")) {
 
             Intent obj = new Intent(staff2.this, staff3.class);
-           // obj.putExtra("text",username1);
+            obj.putExtra("text", username1);
             Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show();
             startActivity(obj);
 
+        } else {
+            Toast.makeText(staff2.this, "Invalid User!", Toast.LENGTH_SHORT).show();
         }
-        //else{
-       //     Toast.makeText(staff2.this, "Invalid User!", Toast.LENGTH_SHORT).show();
-        }
+    }
+}
 
         /*StringRequest sr_obj=new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {
             @Override

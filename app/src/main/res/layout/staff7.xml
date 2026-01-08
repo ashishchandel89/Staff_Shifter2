@@ -139,22 +139,12 @@
 
 
 
-                        <TextView
-                            android:id="@+id/t1_"
-                            android:layout_width="288dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="65dp"
-                            android:fontFamily="@font/font2"
-                            android:padding="10dp"
-                            android:text=""
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16dp"></TextView>
+
 
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="450dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
                         android:layout_marginTop="55dp"
                         android:layout_marginBottom="30dp"
@@ -168,24 +158,24 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=" "
-                                android:textSize="16dp"
-                                android:fontFamily="@font/font3"
-                                android:textColor="#484851"
-                                android:layout_marginTop="7dp"
-                                android:layout_marginLeft="17dp"
-                                android:id="@+id/date1"
-                                ></TextView>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 android:text=""
                                 android:textSize="16dp"
                                 android:fontFamily="@font/font3"
                                 android:textColor="#484851"
-                                android:layout_marginTop="7dp"
+                                android:layout_marginTop="17dp"
+                                android:layout_marginLeft="17dp"
+                                android:id="@+id/t1_faculty"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="'s Detail:"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/font3"
+                                android:textColor="#484851"
+                                android:layout_marginTop="17dp"
                                 android:layout_marginLeft="2dp"
-                                android:id="@+id/date2"
+                                android:id="@+id/t2"
                                 ></TextView>
                         </LinearLayout>
 
@@ -193,11 +183,288 @@
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginHorizontal="13dp"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="2dp"
                             android:background="#484851"
                             ></View>
 
+
+                    <!--   DETAILS   -->
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="13dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name :"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/font"
+                        android:textStyle="bold"
+                        android:textColor="#484851"
+                        android:layout_marginTop="37dp"
+                        android:layout_marginLeft="2dp"
+                        android:id="@+id/t1_Name"
+                        ></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="15dp"
+                                android:fontFamily="@font/font"
+                                android:textColor="#484851"
+                                android:layout_marginTop="37dp"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/t1_Name2"
+                                ></TextView>
                     </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Father's Name :"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/font"
+                                android:textStyle="bold"
+                                android:textColor="#484851"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/t1_fname"
+                                ></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="15dp"
+                                android:fontFamily="@font/font"
+                                android:textColor="#484851"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/t1_fname2"
+                                ></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Password: "
+                                android:textSize="16dp"
+                                android:fontFamily="@font/font"
+                                android:textStyle="bold"
+                                android:textColor="#484851"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/t1_pass"
+                                ></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="15dp"
+                                android:fontFamily="@font/font"
+                                android:textColor="#484851"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/t1_pass2"
+                                ></TextView>
+                        </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Email :"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_email"
+                                    ></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/font"
+
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_email2"
+                                    ></TextView>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Phone No :"
+                                    android:textStyle="bold"
+                                    android:textSize="16dp"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_phone"
+                                    ></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_phone2"
+                                    ></TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Date of Birth :"
+                                    android:textSize="16dp"
+                                    android:fontFamily="@font/font"
+                                    android:textStyle="bold"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_dob"
+                                    ></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_dob2"
+                                    ></TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gender :"
+                                    android:textSize="16dp"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_gender"
+                                    ></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="15dp"
+                                    android:fontFamily="@font/font"
+                                    android:textColor="#484851"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:id="@+id/t1_gender2"
+                                    ></TextView>
+                            </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="43dp"
+                                android:layout_height="43dp"
+                                android:src="@drawable/whatsapp"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginLeft="20dp"
+                                android:scaleType="centerInside"
+                                android:layout_marginBottom="20dp"
+                                android:padding="5dp"
+                                android:onClick="whatsapp"
+                                android:background="@drawable/shape9"
+                                ></ImageButton>
+
+                            <ImageButton
+                                android:layout_width="43dp"
+                                android:layout_height="43dp"
+                                android:src="@drawable/mail"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginLeft="40dp"
+                                android:scaleType="centerInside"
+                                android:layout_marginBottom="20dp"
+                                android:padding="9dp"
+                                android:onClick="email"
+                                android:background="@drawable/shape7"
+                                ></ImageButton>
+
+                            <ImageButton
+                                android:layout_width="43dp"
+                                android:layout_height="43dp"
+                                android:src="@drawable/telephone"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginLeft="40dp"
+                                android:scaleType="centerInside"
+                                android:layout_marginBottom="20dp"
+                                android:padding="9dp"
+                                android:onClick="call"
+                                android:background="@drawable/shape9"
+                                ></ImageButton>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    </LinearLayout>
+
                 </RelativeLayout>
 
 

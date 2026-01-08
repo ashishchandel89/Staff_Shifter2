@@ -1,9 +1,13 @@
 package com.example.staffshifter;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +23,7 @@ import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.AuthFailureError;
@@ -42,7 +47,9 @@ public class staff7 extends Activity {
 
     Spinner name_spin;
     ArrayList list_name;
+    TextView t1_faculty;
     String name1,f_name1,pass1,email1,phone1,dob1,gender1;
+    TextView t1_Name2,t1_fname2,t1_pass2,t1_email2,t1_phone2,t1_dob2,t1_gender2;
     ArrayAdapter adptr_name;
     String url1 = "https://aptechfatehabad.com/ashish_facultynames.php";
     String url2 = "https://aptechfatehabad.com/ashish_detail.php";
@@ -59,7 +66,17 @@ public class staff7 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.staff7);
         name_spin = findViewById(R.id.name_spin);
+        t1_Name2=findViewById(R.id.t1_Name2);
+        t1_fname2=findViewById(R.id.t1_fname2);
+        t1_pass2=findViewById(R.id.t1_pass2);
+        t1_email2=findViewById(R.id.t1_email2);
+        t1_phone2=findViewById(R.id.t1_phone2);
+        t1_dob2=findViewById(R.id.t1_dob2);
+        t1_gender2=findViewById(R.id.t1_gender2);
+
+
         list_name = new ArrayList<>();
+        t1_faculty=findViewById(R.id.t1_faculty);
 
         // Spinner adapter
         adptr_name = new ArrayAdapter<>(this, R.layout.text1, list_name);
@@ -73,7 +90,7 @@ public class staff7 extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 name2 = name_spin.getSelectedItem().toString();
-                name2 = name_spin.getSelectedItem().toString();
+                t1_faculty.setText(name2);
 
                 StringRequest sr_obj = new StringRequest(Request.Method.POST, url2,
                         new Response.Listener<String>() {
@@ -93,16 +110,23 @@ public class staff7 extends Activity {
 
                                     for (int i = 0; i < array.length(); i++) {
                                         JSONObject js_obj = array.getJSONObject(i);
-                                        name1=js_obj.getString("uname");
-                                        f_name1=js_obj.getString("fname");
-                                        pass1=js_obj.getString("pass");
-                                        email1=js_obj.getString("email");
-                                        phone1= js_obj.getString("phone");
-                                        dob1=js_obj.getString("dob");
-                                        gender1=js_obj.getString("gender");
 
+                                        if(js_obj.getString("uname").trim()
+                                                .equalsIgnoreCase(name2.trim())) {
 
+                                            t1_Name2.setText(js_obj.getString("uname"));
+                                            t1_fname2.setText(js_obj.getString("fname"));
+                                            t1_pass2.setText(js_obj.getString("pass"));
+                                            t1_email2.setText(js_obj.getString("email"));
+                                            t1_phone2.setText(js_obj.getString("phone"));
+                                            t1_dob2.setText(js_obj.getString("dob"));
+                                            t1_gender2.setText(js_obj.getString("gender"));
+                                            break;
+                                        }
                                     }
+
+
+                                    phone1=t1_phone2.getText().toString();
 
 
 
@@ -171,8 +195,62 @@ public class staff7 extends Activity {
     }
 
 
+    //------------------Whatsapp--------------
 
+
+    public void whatsapp(View v) {
+
+        if (phone1 != null) {
+            String message="Hello "+t1_Name2;
+            Intent obj = new Intent(Intent.ACTION_VIEW);
+            obj.setData(Uri.parse("http://wa.me/" + phone1 + "?text=" + Uri.encode(message)));
+            startActivity(obj);
+        }else{
+            Toast.makeText(this, "Please select free faculty", Toast.LENGTH_SHORT).show();
+        }
     }
+
+
+    public void call(View v) {
+        if (t1_phone2 != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.CALL_PHONE}, 2);
+                return;
+            }
+
+            Intent obj = new Intent(Intent.ACTION_CALL);
+            obj.setData(Uri.parse("tel:" + phone1));
+            startActivity(obj);
+        }
+    }
+    public void email(View v) {
+
+        String to = t1_email2.getText().toString().trim();
+
+        if (!to.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("message/rfc822"); // IMPORTANT
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{to});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "StaffShifter App");
+            intent.putExtra(Intent.EXTRA_TEXT, "Hello " + t1_Name2.getText().toString());
+
+            try {
+                startActivity(Intent.createChooser(intent, "Choose Email App"));
+            } catch (Exception e) {
+                Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Email not available", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+
+}
 
 
 
